@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toko Sepatu</title>
+</head>
+<body>
+
+    <h2>Produk Sepatu</h2>
+
+    <img src="sepatu.jpg" width="200">
+
+    <p>Sepatu wanita elegan</p>
+
+</body>
+</html>
