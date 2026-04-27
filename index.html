@@ -25,7 +25,6 @@
         .logo-img {
             width: 200px;
             height: auto;
-            transition: transform 0.3s;
         }
 
         /* Navigation */
@@ -124,7 +123,7 @@
             margin-top: 15px;
         }
         .button, .button-secondary {
-            padding: 10px 15px;
+            padding: 12px 15px;
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
@@ -133,6 +132,8 @@
             font-size: 14px;
             border: none;
             text-decoration: none;
+            display: inline-block;
+            box-sizing: border-box;
         }
         .button {
             background-color: #630d21;
@@ -175,7 +176,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             .visi-misi-grid { grid-template-columns: 1fr; }
-            nav a { margin: 0 10px; font-size: 12px; }
+            nav a { margin: 0 10px; font-size: 11px; }
             .product-actions { flex-direction: column; }
         }
     </style>
@@ -224,8 +225,8 @@
                     <h3>Flatshoes Pita</h3>
                     <p class="price">Rp58.000</p>
                     <div class="product-actions">
-                        <button class="button-secondary">🛒 Keranjang</button>
-                        <button class="button">Beli</button>
+                        <button class="button-secondary" onclick="tambahKeranjang('Flatshoes Pita')">🛒 Keranjang</button>
+                        <a href="https://wa.me/6282128359084?text=Halo%20Risnawati,%20saya%20mau%20pesan%20Flatshoes%20Pita" target="_blank" class="button">Beli</a>
                     </div>
                 </div>
 
@@ -234,8 +235,8 @@
                     <h3>Flatshoes Putih</h3>
                     <p class="price">Rp97.000</p>
                     <div class="product-actions">
-                        <button class="button-secondary">🛒 Keranjang</button>
-                        <button class="button">Beli</button>
+                        <button class="button-secondary" onclick="tambahKeranjang('Flatshoes Putih')">🛒 Keranjang</button>
+                        <a href="https://wa.me/6282128359084?text=Halo%20Risnawati,%20saya%20mau%20pesan%20Flatshoes%20Putih" target="_blank" class="button">Beli</a>
                     </div>
                 </div>
 
@@ -244,8 +245,8 @@
                     <h3>Flatshoes Hitam</h3>
                     <p class="price">Rp105.000</p>
                     <div class="product-actions">
-                        <button class="button-secondary">🛒 Keranjang</button>
-                        <button class="button">Beli</button>
+                        <button class="button-secondary" onclick="tambahKeranjang('Flatshoes Hitam')">🛒 Keranjang</button>
+                        <a href="https://wa.me/6282128359084?text=Halo%20Risnawati,%20saya%20mau%20pesan%20Flatshoes%20Hitam" target="_blank" class="button">Beli</a>
                     </div>
                 </div>
 
@@ -263,8 +264,35 @@
                 <p>📍 <strong>Alamat:</strong> Jl. Tangkuban Perahu No. 23</p>
                 <p>📞 <strong>WhatsApp:</strong> +62 821 2835 9084</p>
 
-                <form action="#">
-                    <input type="text" class="input-group" placeholder="Nama Lengkap" required>
+                <form onsubmit="kirimPesan(event)">
+                    <input type="text" id="nama" class="input-group" placeholder="Nama Lengkap" required>
                     <input type="email" class="input-group" placeholder="Email Aktif" required>
-                    <textarea class="input-group" placeholder="Tulis pesan atau pesanan Anda..." rows="4" required></textarea>
-                    <button type="submit" class="button" style="width: 100%; border-radius
+                    <textarea id="pesan" class="input-group" placeholder="Tulis pesan atau pesanan Anda..." rows="4" required></textarea>
+                    <button type="submit" class="button" style="width: 100%; border-radius: 8px;">Kirim Pesan via WA</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 RISNAWATI.id - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Fungsi untuk tombol Keranjang
+        function tambahKeranjang(namaProduk) {
+            alert(namaProduk + " berhasil ditambahkan ke keranjang!");
+        }
+
+        // Fungsi untuk Form Kontak agar lari ke WhatsApp juga
+        function kirimPesan(event) {
+            event.preventDefault();
+            const nama = document.getElementById('nama').value;
+            const pesan = document.getElementById('pesan').value;
+            const linkWA = "https://wa.me/6282128359084?text=Halo%20Risnawati,%20saya%20" + nama + ".%20" + pesan;
+            window.open(linkWA, '_blank');
+        }
+    </script>
+
+</body>
+</html>
