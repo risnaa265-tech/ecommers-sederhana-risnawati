@@ -10,7 +10,7 @@
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f4; /* Hijau pucat biar senada logo */
+            background-color: #fdfafb; /* Background putih kemerahan tipis */
             color: #333;
             scroll-behavior: smooth;
         }
@@ -19,11 +19,11 @@
         header {
             background-color: #ffffff;
             text-align: center;
-            padding: 40px 10px;
-            border-bottom: 3px solid #779e6d;
+            padding: 30px 10px;
+            border-bottom: 3px solid #630d21; /* Warna Maroon dari Logo */
         }
         .logo-img {
-            width: 180px; /* Ukuran logo disesuaikan */
+            width: 200px; /* Ukuran logo */
             height: auto;
             transition: transform 0.3s;
         }
@@ -33,7 +33,7 @@
 
         /* Navigation */
         nav {
-            background-color: #779e6d; /* Hijau sesuai logo */
+            background-color: #630d21; /* Maroon sesuai logo */
             padding: 15px 0;
             text-align: center;
             position: sticky;
@@ -51,7 +51,7 @@
             transition: 0.3s;
         }
         nav a:hover {
-            color: #d1ffd1;
+            color: #ffcdd2;
         }
 
         /* Container */
@@ -65,7 +65,7 @@
         .section-title {
             text-align: center;
             margin-bottom: 30px;
-            color: #4a6344;
+            color: #4a0a19;
             position: relative;
         }
         .section-title::after {
@@ -73,7 +73,7 @@
             display: block;
             width: 50px;
             height: 3px;
-            background: #779e6d;
+            background: #630d21;
             margin: 10px auto;
         }
 
@@ -88,10 +88,10 @@
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            border-left: 5px solid #779e6d;
+            border-left: 5px solid #630d21;
         }
         .card h3 {
-            color: #779e6d;
+            color: #630d21;
             margin-top: 0;
         }
 
@@ -122,7 +122,7 @@
             margin-bottom: 15px;
         }
         .price {
-            color: #2e7d32;
+            color: #630d21;
             font-size: 1.2em;
             font-weight: bold;
             margin: 10px 0;
@@ -130,7 +130,7 @@
 
         /* Button */
         .button {
-            background-color: #779e6d;
+            background-color: #630d21;
             color: white;
             padding: 12px 25px;
             border: none;
@@ -142,8 +142,8 @@
             transition: 0.3s;
         }
         .button:hover { 
-            background-color: #5a7a52;
-            box-shadow: 0 4px 12px rgba(119, 158, 109, 0.4);
+            background-color: #4a0a19;
+            box-shadow: 0 4px 12px rgba(99, 13, 33, 0.3);
         }
 
         /* Form & Contact */
@@ -164,7 +164,7 @@
         }
 
         footer {
-            background-color: #333;
+            background-color: #1a1a1a;
             color: white;
             text-align: center;
             padding: 30px;
@@ -174,7 +174,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             .visi-misi-grid { grid-template-columns: 1fr; }
-            .logo-img { width: 140px; }
+            .logo-img { width: 160px; }
             nav a { margin: 0 10px; font-size: 12px; }
         }
     </style>
@@ -182,10 +182,7 @@
 <body>
 
     <header>
-        <a href="index.html">
-            <img src="logotoko.jpag" alt="logotoko.jpag" class="logo-img">
-        </a>
-        <p style="color: #666; margin-top: 10px; font-style: italic;">Pusat Flatshoes Murah & Berkualitas</p>
+        <img src="logo.jpg" alt="gambar4.jpag" class="logo-img">
     </header>
 
     <nav>
