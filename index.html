@@ -10,7 +10,7 @@
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fdfafb; /* Background putih kemerahan tipis */
+            background-color: #fdfafb;
             color: #333;
             scroll-behavior: smooth;
         }
@@ -20,20 +20,17 @@
             background-color: #ffffff;
             text-align: center;
             padding: 30px 10px;
-            border-bottom: 3px solid #630d21; /* Warna Maroon dari Logo */
+            border-bottom: 3px solid #630d21;
         }
         .logo-img {
-            width: 200px; /* Ukuran logo */
+            width: 200px;
             height: auto;
             transition: transform 0.3s;
-        }
-        .logo-img:hover {
-            transform: scale(1.05);
         }
 
         /* Navigation */
         nav {
-            background-color: #630d21; /* Maroon sesuai logo */
+            background-color: #630d21;
             padding: 15px 0;
             text-align: center;
             position: sticky;
@@ -50,9 +47,7 @@
             font-size: 14px;
             transition: 0.3s;
         }
-        nav a:hover {
-            color: #ffcdd2;
-        }
+        nav a:hover { color: #ffcdd2; }
 
         /* Container */
         .container {
@@ -61,12 +56,11 @@
             padding: 40px 20px;
         }
 
-        /* Visi & Misi Section */
+        /* Visi & Misi */
         .section-title {
             text-align: center;
             margin-bottom: 30px;
             color: #4a0a19;
-            position: relative;
         }
         .section-title::after {
             content: '';
@@ -90,63 +84,70 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
             border-left: 5px solid #630d21;
         }
-        .card h3 {
-            color: #630d21;
-            margin-top: 0;
-        }
 
         /* Product Grid */
         .product-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
+            justify-items: center;
         }
         .produk-card {
             background: white;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            width: 280px;
+            width: 100%;
+            max-width: 300px;
             padding: 20px;
             text-align: center;
             transition: 0.3s;
+            box-sizing: border-box;
         }
-        .produk-card:hover {
-            transform: translateY(-10px);
-        }
+        .produk-card:hover { transform: translateY(-10px); }
         .produk-card img {
             width: 100%;
             height: 220px;
             object-fit: cover;
             border-radius: 10px;
-            margin-bottom: 15px;
         }
         .price {
             color: #630d21;
             font-size: 1.2em;
             font-weight: bold;
-            margin: 10px 0;
+            margin: 15px 0;
         }
 
-        /* Button */
+        /* Buttons Style */
+        .product-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .button, .button-secondary {
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            flex: 1;
+            transition: 0.3s;
+            font-size: 14px;
+            border: none;
+            text-decoration: none;
+        }
         .button {
             background-color: #630d21;
             color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.3s;
         }
-        .button:hover { 
-            background-color: #4a0a19;
-            box-shadow: 0 4px 12px rgba(99, 13, 33, 0.3);
+        .button:hover { background-color: #4a0a19; }
+        
+        .button-secondary {
+            background-color: transparent;
+            color: #630d21;
+            border: 1px solid #630d21;
         }
+        .button-secondary:hover { background-color: #fff0f1; }
 
-        /* Form & Contact */
+        /* Contact Form */
         .contact-container {
             background: #fff;
             padding: 40px;
@@ -174,27 +175,22 @@
         /* Responsive */
         @media (max-width: 768px) {
             .visi-misi-grid { grid-template-columns: 1fr; }
-            .logo-img { width: 160px; }
             nav a { margin: 0 10px; font-size: 12px; }
+            .product-actions { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-<img src="gambar4.jpeg" alt="Toko flatsoes" width="200">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Produk</a></li>
-            <li><a href="#">Tentang Kami</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <img src="gambar4.jpeg" alt="Logo RISNAWATI" class="logo-img">
+    </header>
 
     <nav>
         <a href="#">Home</a>
         <a href="#produk">Produk</a>
         <a href="#visi-misi">Visi Misi</a>
-        <a href="#tentang">Tentang Kami</a>
+        <a href="#tentang">Tentang</a>
         <a href="#kontak">Kontak</a>
     </nav>
 
@@ -205,15 +201,15 @@
             <div class="visi-misi-grid">
                 <div class="card">
                     <h3>Visi</h3>
-                    <p>Menjadi toko retail flatshoes nomor satu yang menyediakan alas kaki berkualitas tinggi, trendi, dan terjangkau bagi setiap wanita di Indonesia agar tetap tampil percaya diri setiap hari.</p>
+                    <p>Menjadi toko retail flatshoes nomor satu yang menyediakan alas kaki berkualitas tinggi, trendi, dan terjangkau bagi setiap wanita di Indonesia.</p>
                 </div>
                 <div class="card">
                     <h3>Misi</h3>
                     <ul style="padding-left: 20px; color: #555; line-height: 1.6;">
-                        <li>Memberikan kenyamanan maksimal melalui pemilihan material sepatu terbaik.</li>
-                        <li>Selalu menghadirkan desain flatshoes terbaru mengikuti tren fashion modern.</li>
-                        <li>Memberikan pelayanan pelanggan yang ramah, cepat, dan responsif.</li>
-                        <li>Memastikan harga tetap kompetitif agar bisa dijangkau oleh semua kalangan.</li>
+                        <li>Memberikan kenyamanan maksimal melalui material terbaik.</li>
+                        <li>Menghadirkan desain terbaru mengikuti tren fashion.</li>
+                        <li>Pelayanan pelanggan yang ramah dan responsif.</li>
+                        <li>Memastikan harga tetap kompetitif untuk semua kalangan.</li>
                     </ul>
                 </div>
             </div>
@@ -222,36 +218,47 @@
         <section id="produk">
             <h2 class="section-title">BEST SELLER</h2>
             <div class="product-grid">
+                
                 <div class="produk-card">
                     <img src="gambar1.jpeg" alt="Flatshoes Pita">
                     <h3>Flatshoes Pita</h3>
                     <p class="price">Rp58.000</p>
-                    <button class="button">Beli Sekarang</button>
-            </div>>
+                    <div class="product-actions">
+                        <button class="button-secondary">🛒 Keranjang</button>
+                        <button class="button">Beli</button>
+                    </div>
+                </div>
 
                 <div class="produk-card">
                     <img src="gambar2.jpeg" alt="Flatshoes Putih">
                     <h3>Flatshoes Putih</h3>
                     <p class="price">Rp97.000</p>
-                    <button class="button">Beli Sekarang</button>
-            </div>
+                    <div class="product-actions">
+                        <button class="button-secondary">🛒 Keranjang</button>
+                        <button class="button">Beli</button>
+                    </div>
+                </div>
 
                 <div class="produk-card">
                     <img src="gambar3.jpeg" alt="Flatshoes Hitam">
                     <h3>Flatshoes Hitam</h3>
                     <p class="price">Rp105.000</p>
-                    <button class="button">Beli Sekarang</button>
-            </div>>
+                    <div class="product-actions">
+                        <button class="button-secondary">🛒 Keranjang</button>
+                        <button class="button">Beli</button>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <div class="contact-container">
-            <div id="tentang">
+            <section id="tentang">
                 <h2 class="section-title" style="text-align: left;">Tentang Kami</h2>
                 <p style="line-height: 1.8;"><strong>RISNAWATI</strong> adalah destinasi fashion modern yang fokus pada kualitas dan gaya. Kami percaya bahwa sepatu yang cantik tidak harus menyakitkan kaki. Sejak didirikan, kami berkomitmen untuk melayani ribuan pelanggan dengan koleksi pilihan terbaik kami.</p>
-            </div>
+            </section>
             
-            <div id="kontak" style="margin-top: 40px;">
+            <section id="kontak" style="margin-top: 40px;">
                 <h2 class="section-title" style="text-align: left;">Kontak Kami</h2>
                 <p>📍 <strong>Alamat:</strong> Jl. Tangkuban Perahu No. 23</p>
                 <p>📞 <strong>WhatsApp:</strong> +62 821 2835 9084</p>
@@ -260,17 +267,4 @@
                     <input type="text" class="input-group" placeholder="Nama Lengkap" required>
                     <input type="email" class="input-group" placeholder="Email Aktif" required>
                     <textarea class="input-group" placeholder="Tulis pesan atau pesanan Anda..." rows="4" required></textarea>
-                    <button type="submit" class="button" style="width: 100%; border-radius: 8px;">Kirim Pesan</button>
-                </form>
-            </div>
-        </div>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 <strong>RISNAWATI.id</strong> - All Rights Reserved.</p>
-        <p style="font-size: 12px; color: #aaa; margin-top: 10px;">Didesain untuk kenyamanan langkah Anda.</p>
-    </footer>
-
-</body>
-</html>
+                    <button type="submit" class="button" style="width: 100%; border-radius
